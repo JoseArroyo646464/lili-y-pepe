@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#16050b">
+  <title>Lili ♡ Pepe — 9 meses</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap');
+    
+    :root {
+      --bg: #090205;
+      --wine: #3b0b18;
+      --rose: #e99aa8;
+      --cream: #ffe9ed;
+      --muted: #e5cbd0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: Montserrat, sans-serif;
+      overflow-x: hidden;
+    }
+
+    section {
+      position: relative;
+      min-height: 100vh;
+      padding: 90px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    .script {
+      font-family: "Great Vibes", cursive;
+      font-weight: 400;
+    }
+
+    /* Hero */
+    .hero {
+      overflow: hidden;
+      background: #050104;
+    }
+
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(.52) saturate(.85);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(5, 1, 4, .15), rgba(5, 1, 4, .25) 45%, #090205 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 900px;
+      padding: 30px;
+    }
+
+    .hero-content .script {
+      font-size: clamp(68px, 15vw, 150px);
+      text-shadow: 0 0 35px rgba(255, 120, 145, .28);
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 8vw, 82px);
+      line-height: .9;
+      letter-spacing: 2px;
+    }
+
+    .hero .small {
+      margin-top: 22px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    .scroll {
+      margin: 38px auto 0;
+      border: 1px solid rgba(255, 230, 235, .35);
+      width: max-content;
+      padding: 12px 20px;
+      border-radius: 50px;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    /* Roses */
+    .roses {
+      background: radial-gradient(circle at 50% 45%, #551224 0, #200711 48%, #090205 100%);
+      text-align: center;
+    }
+
+    .roses .script {
+      font-size: clamp(58px, 11vw, 110px);
+    }
+
+    .rose-row {
+      margin: 35px 0;
+      font-size: clamp(55px, 11vw, 105px);
+      letter-spacing: -15px;
+    }
+
+    .white-rose {
+      display: inline-block;
+      filter: grayscale(1) brightness(3);
+      animation: shine 1.8s ease-in-out infinite alternate;
+    }
+
+    @keyframes shine {
+      to {
+        filter: grayscale(1) brightness(4) drop-shadow(0 0 24px white) drop-shadow(0 0 50px #ffd9e0);
+      }
+    }
+
+    .roses p {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(24px, 4vw, 38px);
+      max-width: 750px;
+      margin: auto;
+      line-height: 1.4;
+    }
+
+    .roses .photo-kids {
+      max-width: 420px;
+      margin: 35px auto 0;
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, .48);
+      border: 1px solid rgba(255, 170, 185, .2);
+    }
+
+    .roses .photo-kids img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Phrases */
+    .phrases {
+      background: #0c0307;
+    }
+
+    .container {
+      width: min(1100px, 100%);
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+    }
+
+    .section-title .script {
+      font-size: clamp(55px, 10vw, 100px);
+    }
+
+    .section-title h2 {
+      font-size: clamp(32px, 6vw, 60px);
+    }
+
+    .section-title p {
+      margin: 12px auto 0;
+      color: var(--muted);
+      max-width: 650px;
+      line-height: 1.7;
+    }
+
+    .phrase-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 40px;
+    }
+
+    .phrase {
+      padding: 25px 18px;
+      min-height: 100px;
+      border: 1px solid rgba(255, 170, 185, .17);
+      border-radius: 20px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, .05), rgba(255, 70, 100, .025));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 22px;
+      line-height: 1.25;
+      transition: .35s;
+    }
+
+    .phrase:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 180, 195, .35);
+    }
+
+    /* Timeline */
+    .timeline {
+      background: linear-gradient(180deg, #0c0307, #260914 50%, #0b0306);
+    }
+
+    .memory-list {
+      margin-top: 55px;
+    }
+
+    .memory {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 55px;
+      align-items: center;
+      margin: 100px 0;
+    }
+
+    .memory:nth-child(even) .photo {
+      order: 2;
+    }
+
+    .photo {
+      overflow: hidden;
+      border-radius: 26px;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, .48);
+      background: #16050b;
+    }
+
+    .photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 700px;
+      object-fit: cover;
+      transition: transform .7s;
+    }
+
+    .photo:hover img {
+      transform: scale(1.025);
+    }
+
+    .memory-copy {
+      padding: 10px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: #dca0aa;
+    }
+
+    .memory h3 {
+      font-size: clamp(35px, 5vw, 58px);
+      line-height: 1;
+      margin: 10px 0 20px;
+    }
+
+    .memory p {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(20px, 2.5vw, 27px);
+      line-height: 1.55;
+      color: #f0dce0;
+    }
+
+    /* Gallery (Collage) */
+    .gallery {
+      background: #080204;
+    }
+
+    .collage-container {
+      max-width: 750px;
+      margin: 40px auto 0;
+      overflow: hidden;
+      border-radius: 26px;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, .48);
+      border: 1px solid rgba(255, 190, 200, .2);
+    }
+
+    .collage-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Letter */
+    .letter {
+      background: radial-gradient(circle at 50% 30%, #541325, #18050b 60%, #070103);
+    }
+
+    .letter-card {
+      max-width: 850px;
+      padding: 48px 32px;
+      border: 1px solid rgba(255, 190, 200, .25);
+      border-radius: 30px;
+      background: rgba(10, 1, 5, .38);
+      box-shadow: 0 0 90px rgba(255, 60, 100, .12);
+    }
+
+    .letter-card .script {
+      font-size: clamp(60px, 11vw, 105px);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .letter-card p {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(22px, 3.5vw, 30px);
+      line-height: 1.65;
+    }
+
+    /* Final */
+    .final {
+      min-height: 75vh;
+      text-align: center;
+      background: #060103;
+    }
+
+    .final .script {
+      font-size: clamp(75px, 14vw, 140px);
+    }
+
+    .final h2 {
+      font-size: clamp(35px, 7vw, 75px);
+      margin-top: 5px;
+    }
+
+    /* Music & Hearts */
+    .music {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 50;
+    }
+
+    .music button {
+      border: 1px solid rgba(255, 210, 220, .3);
+      background: rgba(30, 4, 12, .9);
+      color: #fff1f4;
+      padding: 12px 17px;
+      border-radius: 999px;
+      font-family: Montserrat;
+      font-size: 12px;
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .35);
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -30px;
+      z-index: 20;
+      pointer-events: none;
+      animation: float 8s linear forwards;
+      color: rgba(255, 160, 180, .7);
+    }
+
+    @keyframes float {
+      to {
+        transform: translate3d(var(--x), -110vh, 0) rotate(20deg);
+        opacity: 0;
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity .9s ease, transform .9s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media(max-width:800px) {
+      section {
+        padding: 72px 15px;
+      }
+      .phrase-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .memory {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin: 70px 0;
+      }
+      .memory:nth-child(even) .photo {
+        order: 0;
+      }
+      .memory-copy {
+        text-align: center;
+      }
+      .letter-card {
+        padding: 34px 20px;
+      }
+    }
+
+    @media(max-width:520px) {
+      .phrase-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-photo {
+        object-position: center;
+      }
+      .music button {
+        padding: 10px 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img class="hero-photo" src="imagenes/foto1.jpeg" alt="Recuerdo 1" loading="lazy">
+    <div class="hero-content">
+      <div class="script">Lili y Pepe</div>
+      <h1>9 meses de nuestra historia</h1>
+      <div class="small">24 de cada mes · siempre nosotros</div>
+      <div class="scroll">Desliza para entrar a nuestra historia ♡</div>
+    </div>
+  </section>
+
+  <!-- FLORES -->
+  <section class="roses">
+    <div class="container reveal">
+      <div class="script">Para el amor de mi florecita</div>
+      <div class="rose-row">🌹 🌹 <span class="white-rose">🌹</span> 🌹 🌹</div>
+      <p>Entre tantas flores, siempre habrá una que para mí brille diferente.</p>
+      
+      <!-- Imagen de los niños colocada abajo de las flores -->
+      <div class="photo-kids">
+        <img src="imagenes/ninos.jpeg" alt="Niño y Niña" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- FRASES -->
+  <section class="phrases">
+    <div class="container">
+      <div class="section-title reveal">
+        <div class="script">Lili y Pepe</div>
+        <h2>Eres mi Noa y yo soy tu Nick</h2>
+        <p>Hay cosas que no necesitan explicación. Solo nosotros sabemos por qué nos hacen sonreír.</p>
+      </div>
+      <div class="phrase-grid">
+        <div class="phrase">“Cada 24 de cada mes serán los mejores”</div>
+        <div class="phrase">“Diles a mis papas antes”</div>
+        <div class="phrase">“Te amo chiquita chipilona”</div>
+        <div class="phrase">“Esta enojada mi princesa”</div>
+        <div class="phrase">“Mi bebe quiere cereal”</div>
+        <div class="phrase">“Porque la vez”</div>
+        <div class="phrase">“JAJAJA amor no vi nada, ay mi celosita”</div>
+        <div class="phrase">“Amor que nos mandaron para desayunar”</div>
+        <div class="phrase">“Yo voy a los lokers amor quédate aquí”</div>
+        <div class="phrase">“Mientras yo sea tu novio te voy a tratar como mi pricesa”</div>
+        <div class="phrase">“Mira ya deja acomodado aquí para que salgamos…”</div>
+        <div class="phrase">“Un besito aunque estes enojada”</div>
+        <div class="phrase">“Vas a querer un beso y no te lo voy a dar”</div>
+        <div class="phrase">“Loca”</div>
+        <div class="phrase">“Abasho abasho”</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LÍNEA DEL TIEMPO -->
+  <section class="timeline">
+    <div class="container">
+      <div class="section-title reveal">
+        <div class="script">Camino hacia el amor</div>
+        <h2>Los recuerdos que nos trajeron hasta aquí</h2>
+      </div>
+      <div class="memory-list">
+
+        <!-- Recuerdo 01: Foto con playera roja y árbol de Navidad -->
+        <article class="memory reveal">
+          <div class="photo">
+            <img src="imagenes/foto_arbol_rojo.jpeg" alt="Primer Diciembre Juntos" loading="lazy">
+          </div>
+          <div class="memory-copy">
+            <span class="eyebrow">01 · RECUERDO</span>
+            <h3>Primer Diciembre Juntos</h3>
+            <p>Vas a venir a poner el árbol de navidad ehh, mi mama no lo ah puesto porque dijiste que ibas a venir. Ese día acudí a la casa de mi noviesita hermosa, preciosa donde juntos todos pusimos el árbol de Navidad para este nuevo año. “Que mi lili siempre sonria”.</p>
+          </div>
+        </article>
+
+        <!-- Recuerdo 02 -->
+        <article class="memory reveal">
+          <div class="photo">
+            <img src="imagenes/foto3.png" alt="La primera fiesta" loading="lazy">
+          </div>
+          <div class="memory-copy">
+            <span class="eyebrow">02 · RECUERDO</span>
+            <h3>La primera fiesta</h3>
+            <p>La primera fiesta donde latían nuestros corazones, bailamos juntos, apantallamos con nuestros pasos.</p>
+          </div>
+        </article>
+
+        <!-- Recuerdo 03 -->
+        <article class="memory reveal">
+          <div class="photo">
+            <img src="imagenes/foto4.jpeg" alt="Primer Encuentro" loading="lazy">
+          </div>
+          <div class="memory-copy">
+            <span class="eyebrow">03 · RECUERDO</span>
+            <h3>Primer Encuentro</h3>
+            <p>Donde te acercaste a mi pecho y nos tomamos una foto sin saber qué es lo que se siente sentir el calor del amor verdadero.</p>
+          </div>
+        </article>
+
+        <!-- Recuerdo 04 -->
+        <article class="memory reveal">
+          <div class="photo">
+            <img src="imagenes/foto5.jpeg" alt="Un día normal" loading="lazy">
+          </div>
+          <div class="memory-copy">
+            <span class="eyebrow">04 · RECUERDO</span>
+            <h3>Un día normal</h3>
+            <p>Fui a Coppel, compré esa camisa y esperé todo el fin para poder ir a visitarte y que te gustara un poco más.</p>
+          </div>
+        </article>
+
+        <!-- Recuerdo 05 -->
+        <article class="memory reveal">
+          <div class="photo">
+            <img src="imagenes/foto6.jpeg" alt="Mi princesa estaba enojada" loading="lazy">
+          </div>
+          <div class="memory-copy">
+            <span class="eyebrow">05 · RECUERDO</span>
+            <h3>Mi princesa estaba enojada</h3>
+            <p>Aquí mi princesa estaba enojada porque quería apapacho.</p>
+          </div>
+        </article>
+
+        <!-- Recuerdo 06 -->
+        <article class="memory reveal">
+          <div class="photo">
+            <img src="imagenes/foto7.jpeg" alt="Mi princesa y la puerta" loading="lazy">
+          </div>
+          <div class="memory-copy">
+            <span class="eyebrow">06 · RECUERDO</span>
+            <h3>Mi princesa y la puerta</h3>
+            <p>Mi princesa no duraría en ver mucho tiempo la puerta hasta que la consintiera.</p>
+          </div>
+        </article>
+
+        <!-- Recuerdo 07 -->
+        <article class="memory reveal">
+          <div class="photo">
+            <img src="imagenes/foto8.jpeg" alt="Entre pollos" loading="lazy">
+          </div>
+          <div class="memory-copy">
+            <span class="eyebrow">07 · RECUERDO</span>
+            <h3>Entre pollos</h3>
+            <p>Entre pollos, El…</p>
+          </div>
+        </article>
+
+        <!-- Recuerdo 08 -->
+        <article class="memory reveal">
+          <div class="photo">
+            <img src="imagenes/foto9.jpeg" alt="Gallo es el que canta" loading="lazy">
+          </div>
+          <div class="memory-copy">
+            <span class="eyebrow">08 · RECUERDO</span>
+            <h3>Gallo es el que canta</h3>
+            <p>Gallo es el que canta.</p>
+          </div>
+        </article>
+
+        <!-- Recuerdo 09 -->
+        <article class="memory reveal">
+          <div class="photo">
+            <img src="imagenes/foto10.jpeg" alt="Mi princesa se merece todo" loading="lazy">
+          </div>
+          <div class="memory-copy">
+            <span class="eyebrow">09 · RECUERDO</span>
+            <h3>Mi princesa se merece todo</h3>
+            <p>Aquí mi princesa se merece todo y lo que esté a mi alcance es lo que te podré dar.</p>
+          </div>
+        </article>
+
+        <!-- Recuerdo 10 -->
+        <article class="memory reveal">
+          <div class="photo">
+            <img src="imagenes/foto11.jpeg" alt="Junto a mi novia" loading="lazy">
+          </div>
+          <div class="memory-copy">
+            <span class="eyebrow">10 · RECUERDO</span>
+            <h3>Junto a mi novia</h3>
+            <p>Junto a mi novia al término de la estancia escolar sin pensar los retos de la vida.</p>
+          </div>
+        </article>
+
+        <!-- Recuerdo 11: Foto comiendo pizza Little Caesars -->
+        <article class="memory reveal">
+          <div class="photo">
+            <img src="imagenes/foto_pizza.jpeg" alt="Después de la noche" loading="lazy">
+          </div>
+          <div class="memory-copy">
+            <span class="eyebrow">11 · RECUERDO</span>
+            <h3>Después de la noche</h3>
+            <p>Mi pareja y yo saliendo por una pizza después de estar juntos por la noche andando con amor.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA / COLLAGE -->
+  <section class="gallery">
+    <div class="container">
+      <div class="section-title reveal">
+        <div class="script">Y todavía hay más...</div>
+        <p>Porque una historia como la nuestra no cabe en un solo recuerdo.</p>
+      </div>
+      
+      <!-- Imagen del collage de 3 fotos -->
+      <div class="collage-container reveal">
+        <img src="imagenes/collage.jpeg" alt="Collage de Recuerdos" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- CARTA -->
+  <section class="letter">
+    <div class="letter-card reveal">
+      <div class="script">Mi Lili preciosa</div>
+      <p>Hoy mi corazón, mi vida, mi alma entera, mi todo, hoy oficialmente cumplimos <strong>9 mesesotes de ser novios</strong>, donde vivimos retos cada día, emociones, discusiones, sentimientos de amarnos, necesitarnos, pero nunca dejemos que algo sea más que nuestro amor que nos tenemos, porque eres mi pareja, mi alma y mi felicidad, mi Lili preciosa.</p>
+      <p style="text-align:center;margin-top:28px">Te amo, chiquita chipilona. ❤️</p>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="final">
+    <div class="container reveal">
+      <div class="script">9 meses...</div>
+      <h2>y todavía quiero seguir escribiendo nuestra historia.</h2>
+      <p style="margin-top:24px;color:#dcbcc2;letter-spacing:4px">LILI ♡ PEPE</p>
+    </div>
+  </section>
+
+  <!-- MÚSICA -->
+  <div class="music">
+    <button id="musicBtn">♫ Tiroteo · Culpa Mía</button>
+    <audio id="music" loop preload="auto">
+      <source src="musica/tiroteo.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <script>
+    // Animaciones al hacer scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('show');
+      });
+    }, { threshold: .12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Lógica del Reproductor de Música Corregida
+    const audio = document.getElementById('music');
+    const btn = document.getElementById('musicBtn');
+
+    function toggleMusic() {
+      if (audio.paused) {
+        audio.play().then(() => {
+          btn.textContent = '❚❚ Tiroteo · Culpa Mía';
+        }).catch(err => {
+          console.log("No se pudo reproducir el audio. Verifica que exista el archivo musica/tiroteo.mp3");
+        });
+      } else {
+        audio.pause();
+        btn.textContent = '♫ Tiroteo · Culpa Mía';
+      }
+    }
+
+    // Activar/Pausar música con el botón flotante
+    btn.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      toggleMusic();
+    });
+
+    // Intentar iniciar la música en la primera interacción dentro de la página
+    document.addEventListener('click', function startOnFirstClick() {
+      if (audio.paused) {
+        audio.play().then(() => {
+          btn.textContent = '❚❚ Tiroteo · Culpa Mía';
+        }).catch(() => {});
+      }
+      document.removeEventListener('click', startOnFirstClick);
+    }, { once: true });
+
+    // Lluvia de corazones flotantes
+    setInterval(() => {
+      const h = document.createElement('span');
+      h.className = 'heart';
+      h.textContent = ['♥', '♡', '❤'][Math.floor(Math.random() * 3)];
+      h.style.left = (Math.random() * 100) + 'vw';
+      h.style.setProperty('--x', (Math.random() * 180 - 90) + 'px');
+      h.style.fontSize = (13 + Math.random() * 22) + 'px';
+      document.body.appendChild(h);
+      setTimeout(() => h.remove(), 8000);
+    }, 900);
+  </script>
+</body>
+</html>
